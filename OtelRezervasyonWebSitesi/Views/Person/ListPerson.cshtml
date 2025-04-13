@@ -1,0 +1,26 @@
+﻿@model List<OtelRezervasyonWebSitesi.Models.Person>
+
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>ListPerson</title>
+</head>
+<body>
+    <div>
+        @foreach (var kisi in Model)
+        {
+            <div>@kisi.PersonID</div>
+            <div>@kisi.PersonName</div>
+
+            <div>@kisi.PersonCountry</div>
+        }
+    </div>
+</body>
+</html>
