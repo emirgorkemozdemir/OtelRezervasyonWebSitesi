@@ -16,10 +16,13 @@
        <thead>
            <tr>
                <th>Ödeme ID</th>
-               <th>Rezervasyon Bilgileri</th>
+               <th>Rezervasyon Ad Soyad</th>
+               <th>Rezervasyon Otel Adı</th>
+               <th>Rezervasyon Oda Numarası</th>
                <th>Ödeme Tarihi</th>
                <th>Ödeme Yöntemi</th>
                <th>Tutar</th>
+               <th>Ödemeyi Sil</th>
            </tr>
        </thead>
 
@@ -29,10 +32,17 @@
            {
               <tr>
                   <td>@item.OdemeID</td>
-                  <td>@item.Rezervasyonlar.Musteriler.Ad  @item.Rezervasyonlar.Musteriler.Soyad @item.Rezervasyonlar.Odalar.Oteller.OtelAdi @item.Rezervasyonlar.Odalar.OdaNumarasi</td>
+                  <td>@item.Rezervasyonlar.Musteriler.Ad  @item.Rezervasyonlar.Musteriler.Soyad</td>
+                  <td>@item.Rezervasyonlar.Odalar.Oteller.OtelAdi</td>
+                  <td>@item.Rezervasyonlar.Odalar.OdaNumarasi</td>
                   <td>@item.OdemeTarihi</td>
                   <td>@item.OdemeYontemi</td>
                   <td>@item.Tutar</td>
+
+                  <td>
+                      <a class="btn btn-danger" href="/Odeme/OdemeDelete?id=@item.OdemeID">Sil</a>
+                  </td>
+                
               </tr>
            }
        </tbody>

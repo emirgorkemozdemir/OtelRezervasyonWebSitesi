@@ -18,5 +18,15 @@ namespace OtelRezervasyonWebSitesi.Controllers
             List<Odemeler> pays = db.Odemelers.ToList();
             return View(pays);
         }
+
+        [HttpGet]
+
+        public ActionResult OdemeDelete(int id)
+        {
+            Odemeler secili_odeme = db.Odemelers.Find(id);
+            db.Odemelers.Remove(secili_odeme);
+            db.SaveChanges();
+            return RedirectToAction("ListPays");
+        }
     }
 }

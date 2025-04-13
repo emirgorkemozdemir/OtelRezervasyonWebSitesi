@@ -17,5 +17,14 @@ namespace OtelRezervasyonWebSitesi.Controllers
             List<Person> persons = db.People.ToList();
             return View(persons);
         }
+
+        [HttpGet]
+        public ActionResult PersonDelete(int id)
+        {
+            Person secili_kisi = db.People.Find(id);
+            db.People.Remove(secili_kisi);
+            db.SaveChanges();
+            return RedirectToAction("ListPerson");
+        }
     }
 }
